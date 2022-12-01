@@ -4,12 +4,15 @@ import { AuthenticationValidatorModule } from "hemiron-auth/dist/authentication-
 import { APP_GUARD } from "@nestjs/core";
 import { AuthenticationValidationGuard } from "hemiron-auth/dist/guards/authentication-validation.guard";
 import { AppService } from "./app.service";
+import { TestModule } from "./test.module";
+import { UserService } from "./user.service";
 
 @Module({
   imports: [
     AuthenticationValidatorModule.setup({
-      authenticationServerURL: 'http://localhost:3000'
-    })
+      authenticationServerURL: 'http://manager-3.inf-hsleiden:3000'
+    }),
+    TestModule
   ],
   controllers: [
     AppController
@@ -20,7 +23,8 @@ import { AppService } from "./app.service";
       provide: APP_GUARD,
       useClass: AuthenticationValidationGuard,
     },
-    AppService
+    AppService,
+    UserService
   ]
 })
 export class AppModule {}
