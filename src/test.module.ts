@@ -4,7 +4,7 @@ import { Module } from "@nestjs/common";
 @Module({
   imports: [
     AuthenticationValidatorModule.setup({
-      authenticationServerURL: 'http://localhost:3000'
+      authenticationServerURL: 'http://auth.hemiron.com'
     })
   ]
 })
