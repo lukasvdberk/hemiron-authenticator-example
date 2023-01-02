@@ -10,7 +10,7 @@ import { UserService } from "./user.service";
 @Module({
   imports: [
     AuthenticationValidatorModule.setup({
-      authenticationServerURL: 'http://manager-3.inf-hsleiden:3000'
+      authenticationServerURL: 'http://auth.hemiron.com'
     }),
     TestModule
   ],
